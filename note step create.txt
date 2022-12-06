@@ -1,0 +1,36 @@
+1. npm init  vue@latest
+2. cd to  folder project
+3. npm install
+4. npm run dev
+5. npm install quasar @quasar/extras    // จากเว็ป quasar.dev  ( ตัวอย่างคำสั่ง อยู่ที่ getting Started Menu) 
+6. npm install -D @quasar/vite-plugin sass@1.32.12
+7.  ที่ main.js ใส่ข้อความด้านล่าง
+	import { Quasar } from 'quasar'
+	// Import icon libraries
+	import '@quasar/extras/material-icons/material-icons.css'
+	// Import Quasar css
+	import 'quasar/src/css/index.sass' 
+8.  เพิ่มข้อความด้านล่าง ใน file main.js
+	app.use(Quasar, {
+  	plugins: {}, // import Quasar plugins and add here
+	})
+9. import { quasar, transformAssetUrls } from '@quasar/vite-plugin'  // FILE: vite.config.js
+10.  plugins: [vue({
+    template: { transformAssetUrls }
+  }),
+  quasar({
+    sassVariables: 'src/quasar-variables.sass'
+  })
+],
+11.  สร้าง  file  quasar-variables.sass  // FILE (create it): src/quasar-variables.sass
+12.  	copy ด้านล่างไว้ใน  quasar-variables.sass   // 
+	$primary   : #1976D2
+	$secondary : #26A69A
+	$accent    : #9C27B0	
+	$dark      : #1D1D1D
+	$positive  : #21BA45
+	$negative  : #C10015
+	$info      : #31CCEC
+	$warning   : #F2C037
+
+13.  เพิ่ม Layout Builder
